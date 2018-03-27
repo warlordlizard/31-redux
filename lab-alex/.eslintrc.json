@@ -10,30 +10,38 @@
     "err": true,
     "req": true,
     "res": true,
-    "next": true
+    "next": true,
+    "__API_URI__": false,
+    "__TITLE__": false,
+    "__DEBUG__": false
   },
   "plugins": [
     "react"
   ],
   "extends": [
-    "eslint:recommended",
     "plugin:react/recommended"
   ],
   "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "module": true
+    },
     "sourceType": "module"
   },
   "rules": {
     "no-console": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": [ 0 ],
     "indent": [
       "error",
-      2
+      2,
+      { "SwitchCase": 1 }
     ],
     "quotes": [
       "error",
       "single",
-      {
-        "allowTemplateLiterals": true
-      }
+      { "allowTemplateLiterals": true }
     ],
     "comma-dangle": [
       "error",
