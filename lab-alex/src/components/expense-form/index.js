@@ -5,7 +5,7 @@ import React from 'react';
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.expense ? { ...props.expense } : { title: '', budget: '' };
+    this.state = props.expense ? { ...props.expense } : { expenseName: '', expenseAmount: '', categoryID: props.categoryID };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,16 +17,19 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onComplete({ ...this.state });
+    this.props.onComplete(this.state);
 
     if (!this.props.expense) {
-      this.setState({ title: '' });
+      this.setState({ expenseName: '', expenseAmount: ''});
     }
   }
 
   componentWillReceiveProps(props) {
     if (props.expense) {
-      this.setState(props.expense);
+      this.setState({...props.expense});
+    }
+    if(props.categoryID) {
+      this.setState({categoryID : props.categoryID});
     }
   }
 

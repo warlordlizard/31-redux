@@ -2,7 +2,7 @@
 
 import {createStore, applyMiddleware} from 'redux';
 import reducer from '../reducer/index.js';
-import reporter from './redux-reducer.js';
+import reporter from './redux-reporter.js';
 import validateCategory from './validate-category.js';
 import validateExpense from './validate-expense.js';
 
