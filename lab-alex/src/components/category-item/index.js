@@ -5,12 +5,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import ExpenseForm from '../expense-form';
+import ExpenseItem from '../expense-item';
+
 import {categoryUpdate, categoryDelete} from '../../action/category-actions.js';
 import { expenseCreate as expenseActionCreate } from '../../action/expense-actions.js';
+import {renderIf} from '../../lib/util.js';
 
 class CategoryItem extends React.Component {
   render() {
-    let {category, categoryDelete, categoryUpdate, expense, expenseCreate} = this.props;
+    let { category, categoryDelete, categoryUpdate, expenses, expenseCreate} = this.props;
     return(
       <section className='category-item'>
         <div>
@@ -24,12 +27,12 @@ class CategoryItem extends React.Component {
               category={category}
               onComplete={categoryUpdate} />
           </div>
-          <div className='expense-form'>
+          <div className='expense-container'>
             <ExpenseForm
               buttonText='create expense'
-              expense={expense}
               onComplete={expenseCreate}
-              categoryID= {expense} />
+              categoryID={category.id} />
+            { renderIf(expenses[category.id].length, <ExpenseItem expenses={expenses[category.id]} />)}
           </div>
         </div>
       </section>
