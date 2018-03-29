@@ -8,12 +8,13 @@ import ExpenseForm from '../expense-form';
 import ExpenseItem from '../expense-item';
 
 import {categoryUpdate, categoryDelete} from '../../action/category-actions.js';
-import { expenseCreate as expenseActionCreate } from '../../action/expense-actions.js';
+import {expenseCreate as expenseActionCreate} from '../../action/expense-actions.js';
 import {renderIf} from '../../lib/util.js';
 
 class CategoryItem extends React.Component {
   render() {
-    let { category, categoryDelete, categoryUpdate, expenses, expenseCreate} = this.props;
+    let {category, categoryDelete, categoryUpdate, expenses, expenseCreate} = this.props;
+    category.budget = expenses[category.id].expenseAmount;
     return(
       <section className='category-item'>
         <div>
@@ -35,7 +36,7 @@ class CategoryItem extends React.Component {
                 onComplete={expenseCreate}
                 categoryID={category.id} />
             </div>
-            { renderIf(expenses[category.id].length, <ExpenseItem expenses={expenses[category.id]} />)}
+            {renderIf(expenses[category.id].length, <ExpenseItem expenses={expenses[category.id]} />)}
           </div>
         </div>
       </section>

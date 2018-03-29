@@ -6,7 +6,7 @@ import './_expense-form.scss';
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.expense ? { ...props.expense } : { expenseName: '', expenseAmount: '', categoryID: props.categoryID };
+    this.state = props.expense ? {...props.expense} : { expenseName: '', expenseAmount: '', categoryID: props.categoryID };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,7 +49,7 @@ class ExpenseForm extends React.Component {
           placeholder='$ expense amount'
           value={this.state.expenseAmount}
           onChange={this.handleChange} />
-        <button className='form-button' type='submit'>{this.props.buttonText}</button>
+        <button className='form-button icon-home3' type='submit'>{this.props.buttonText}</button>
       </form>
     );
   }

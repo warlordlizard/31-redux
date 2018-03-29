@@ -57,6 +57,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(ttf|eot|svg)?(\?[a-z0-9#=&.]+)?$/,
+        loader: 'file-loader',
+      },
+      {
         test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
         exclude: /\.glyph.svg/,
         use: [
