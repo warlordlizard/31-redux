@@ -1,11 +1,12 @@
 'use strict';
 
 import React from 'react';
+import './_category-form.scss';
 
 class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.category ? {...props.category} : {title: ''};
+    this.state = props.category ? {...props.category} : {title: '', budget: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +21,7 @@ class CategoryForm extends React.Component {
     this.props.onComplete({...this.state});
 
     if(!this.props.category) {
-      this.setState({ title: '' });
+      this.setState({ title: '', budget: '' });
     }
   }
 
