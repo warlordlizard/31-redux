@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import DashboardContainer from '../dashboard-container';
 import createAppStore from '../../lib/store.js';
+import './_app.scss';
 
 const store = createAppStore();
 

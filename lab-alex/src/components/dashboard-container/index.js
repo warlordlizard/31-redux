@@ -6,17 +6,21 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import {categoryCreate as categoryActionCreate} from '../../action/category-actions.js';
-import { expenseCreate as expenseActionCreate } from '../../action/expense-actions.js';
+import {expenseCreate as expenseActionCreate} from '../../action/expense-actions.js';
 
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
+// import Modal from '../modal';
 
 class DashboardContainer extends React.Component {
   componentDidMount() {
     this.props.categoryCreate({ title: 'groceries', budget: 400 });
-    this.props.categoryCreate({ title: 'car', budget: 400  });
+    // this.props.categoryCreate({ title: 'car', budget: categotyExpenses.budget  });
   }
   render() {
+    // let categoryTotal = this.props.expenses
+    // // .map( expense  => expense.budget)
+    // console.log (categoryTotal)
     return(
       <main className='dashboard'>
         <header>
