@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import './_expense-item.scss';
 import {connect} from 'react-redux';
 import ExpenseForm from '../expense-form';
 import {expenseUpdate, expenseDelete} from '../../action/expense-actions.js';
@@ -11,9 +12,9 @@ class ExpenseItem extends React.Component {
     return (
       <ul className='expense-list'>
         {expenses.map(expense => 
-          <li className='expense-item' key={expense}>
+          <li className='expense-item' key={expense.id}>
             <p>{expense.expenseName}</p>
-            <p>{expense.expenseAmount}</p>
+            <p>${expense.expenseAmount}</p>
             <button type="submit" onClick={() => expenseDelete(expense)}>X</button>
             <ExpenseForm
               expense={expense}
@@ -22,7 +23,7 @@ class ExpenseItem extends React.Component {
           </li>
         )}
       </ul>
-    )
+    );
   }
 }
 

@@ -18,7 +18,8 @@ class CategoryItem extends React.Component {
       <section className='category-item'>
         <div>
           <div className='content'>
-            <h3>{category.title}</h3>
+            <h2>{category.title}</h2>
+            <p>Total: ${category.budget}</p>
             <button className='remove' type='submit' onClick={() => categoryDelete(category)}>X</button>
           </div>
           <div className='edit'>
@@ -28,10 +29,12 @@ class CategoryItem extends React.Component {
               onComplete={categoryUpdate} />
           </div>
           <div className='expense-container'>
-            <ExpenseForm
-              buttonText='create expense'
-              onComplete={expenseCreate}
-              categoryID={category.id} />
+            <div className='add-expense'>
+              <ExpenseForm
+                buttonText='create expense'
+                onComplete={expenseCreate}
+                categoryID={category.id} />
+            </div>
             { renderIf(expenses[category.id].length, <ExpenseItem expenses={expenses[category.id]} />)}
           </div>
         </div>

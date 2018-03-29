@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import './_expense-form.scss';
 
 class ExpenseForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ExpenseForm extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ [name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit(e) {
