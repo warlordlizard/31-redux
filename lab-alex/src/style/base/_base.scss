@@ -1,23 +1,47 @@
 button {
     background: $dark-grey;
     border: none;
-    color: #fff;
-    border-radius: $radius;
+    color: $white;
+    @include border-radius($radius);
     font-size: $font-sm;
     padding: 1vw 3vw;
     text-transform: lowercase;
+    margin: $gutter-sm 0;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input{
   padding: $input-pad;
-  border: solid 1px $black;
+  border: solid 1px $dark-grey;
   width: 50%;
-  margin-right: $gutter-sm;
+  margin:  $gutter-sm;
   font-size: $font-sm;
-  margin-bottom: $gutter-sm;
+  // margin-bottom: $gutter-sm;
+  @include border-radius(5px);
 }
+
 
 body {
   font-family: $font;
+  background-color: $tereriary-color;
+  width: 100%;
+  color: $dark-grey;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+    color: $secondary-color;
+}
+
+
+h2 {
+  font-size: $font-lg;
+  padding-bottom: $gutter-sm;
+}
+h1 {
+  font-size: $font-lg +1vw;
+  padding-bottom: $gutter-sm;
 }
 

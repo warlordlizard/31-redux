@@ -13,9 +13,9 @@ class ExpenseItem extends React.Component {
       <ul className='expense-list'>
         {expenses.map(expense => 
           <li className='expense-item' key={expense.id}>
+            <button className="remove" type="submit" onClick={() => expenseDelete(expense)}>X</button>
             <p>{expense.expenseName}</p>
             <p>${expense.expenseAmount}</p>
-            <button type="submit" onClick={() => expenseDelete(expense)}>X</button>
             <ExpenseForm
               expense={expense}
               buttonText='update'

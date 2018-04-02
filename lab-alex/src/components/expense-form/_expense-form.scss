@@ -1,8 +1,16 @@
+@import '../../style/lib/vars';
+@import '../../style/lib/mixins';
+
 .expense-form{
+  display: inline-block;
+  input:first-child {
+    margin: 2.5vw $gutter-sm 0.25vw $gutter-sm;
+  }
   input{
-    width: 75%;
+    width: 60%;
+    margin: 0.25vw $gutter-sm 0.25vw $gutter-sm;
   }
   button {
-    margin: 10px;
+    margin: $gutter-sm;
   }
 }

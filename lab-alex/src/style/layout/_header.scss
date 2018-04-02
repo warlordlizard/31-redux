@@ -2,15 +2,20 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: $black;
+  background: $dark-grey;
   padding: $gutter-sm;
-  font-size: $font-lg;
   margin-bottom: $gutter-sm;
-
-  h2 {
-    color: $white;
-
+  
+  h3 {
+    font-size: $font-med;
+    color: $secondary-color;
+    float: left;
+  }
+    ul {
+    float: right;
+  }
+  a {
+    font-size: $font-med;
   }
 }
 
-//fixed header
