@@ -20,7 +20,7 @@ class CategoryItem extends React.Component {
         <div>
           <div className='content'>
             <h2>{category.title}</h2>
-            <p>Total: ${category.budget}</p>
+            {/* <p>Total: ${category.budget}</p> */}
             <button className='remove' type='submit' onClick={() => categoryDelete(category)}>X</button>
           </div>
           <div className='edit'>

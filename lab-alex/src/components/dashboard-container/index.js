@@ -14,7 +14,7 @@ import CategoryItem from '../category-item';
 
 class DashboardContainer extends React.Component {
   componentDidMount() {
-    this.props.categoryCreate({ title: 'groceries', budget: 400 });
+    // this.props.categoryCreate({ title: 'groceries', budget: 400 });
     // this.props.categoryCreate({ title: 'car', budget: categotyExpenses.budget  });
   }
   render() {
